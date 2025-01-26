@@ -623,6 +623,8 @@ require('lazy').setup({
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
+        -- The filetype parameter is used to disable wgsl_analyzer as it is currently more harm than help.
+        wgsl_analyzer = { filetypes = '*.exe' },
         rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -934,7 +936,7 @@ require('lazy').setup({
   --
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
-  require 'kickstart.plugins.lint',
+  -- require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
@@ -971,6 +973,6 @@ require('lazy').setup({
   },
 })
 
-vim.cmd ":Neotree filesystem reveal left show"
+vim.cmd ':Neotree filesystem reveal left show'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
